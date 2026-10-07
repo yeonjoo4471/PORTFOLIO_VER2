@@ -1,0 +1,330 @@
+/* ==========================================================================
+   Epilogue & Contact Section Styling
+   Theme: Quiet Epilogue into Contrast Night Sky Credits
+   Structure: Open Typographic Layout (No Glassmorphism Card Boxes)
+   ========================================================================== */
+
+.contact-section {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Epilogue Block (Daylight Open Spread)
+   ========================================================================== */
+
+.epilogue-block {
+  padding: clamp(6rem, 9vw, 9rem) 0;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.epilogue-content {
+  max-width: 960px;
+}
+
+.epilogue-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-clear-blue);
+  display: block;
+  margin-bottom: 0.85rem;
+}
+
+.epilogue-title {
+  font-size: clamp(2.5rem, 5.8vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--color-deep-navy);
+  margin-bottom: 1.75rem;
+}
+
+.epilogue-highlight {
+  color: var(--color-clear-blue);
+  font-style: italic;
+}
+
+.epilogue-text {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--color-body-slate);
+  line-height: 1.85;
+}
+
+/* ==========================================================================
+   Contact & Night Sky Block (Open Cinematic Finale)
+   ========================================================================== */
+
+.contact-night-block {
+  position: relative;
+  padding: clamp(6.5rem, 10vw, 9.5rem) 0;
+  background: var(--color-deep-navy);
+  color: var(--color-cloud-white);
+  overflow: hidden;
+}
+
+.contact-night-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.contact-night-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  filter: contrast(1.1) brightness(0.85);
+}
+
+.contact-night-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 42, 58, 0.8) 0%,
+    rgba(11, 19, 25, 0.95) 100%
+  );
+}
+
+.contact-container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-editorial-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+/* Left Column: Open Typography */
+.contact-left-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-meta-tag {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-sky-blue);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.contact-heading {
+  font-size: clamp(2.5rem, 5.2vw, 4rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 1.25rem;
+}
+
+.contact-subtext {
+  font-size: 1rem;
+  color: rgba(248, 250, 252, 0.75);
+  line-height: 1.8;
+  margin-bottom: 2.75rem;
+  max-width: 540px;
+}
+
+/* Direct Email Unit (No Box Enclosure, Pure Large Typography) */
+.contact-email-unit {
+  padding: 1.85rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.method-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-sky-blue);
+  display: block;
+}
+
+.email-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.email-link {
+  font-size: clamp(1.45rem, 2.8vw, 2.15rem);
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+.email-link:hover {
+  color: var(--color-sky-blue);
+}
+
+.email-copy-action {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-sky-blue);
+  background: transparent;
+  border-bottom: 1px solid var(--color-sky-blue);
+  padding-bottom: 2px;
+  cursor: pointer;
+  transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.email-copy-action:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Social Channels Unit (Open Text Links) */
+.contact-social-unit {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.social-links-list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-text-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(248, 250, 252, 0.85);
+  transition: color var(--duration-fast) ease;
+}
+
+.social-text-link:hover {
+  color: var(--color-sky-blue);
+}
+
+.link-arrow {
+  font-size: 0.875rem;
+  transition: transform var(--duration-fast) ease;
+}
+
+.social-text-link:hover .link-arrow {
+  transform: translate(2px, -2px);
+}
+
+.social-sep {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.8125rem;
+}
+
+/* ==========================================================================
+   Right Column: Open Rolling Credits Plate (No Card Box, Pure Film Roll)
+   ========================================================================== */
+
+.credits-editorial-plate {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 1rem;
+}
+
+.credits-plate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 1rem;
+}
+
+.credits-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-sky-blue);
+}
+
+.credits-file {
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  color: rgba(248, 250, 252, 0.45);
+}
+
+.credits-scroll-region {
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.credits-scroll-region::-webkit-scrollbar {
+  width: 2px;
+}
+
+.credits-scroll-region::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.credits-scroll-region::-webkit-scrollbar-thumb {
+  background: var(--color-sky-blue);
+}
+
+.credits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.credit-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.credit-entry:last-child {
+  border-bottom: none;
+}
+
+.credit-entry dt {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-sky-blue);
+}
+
+.credit-entry dd {
+  font-size: 0.9375rem;
+  color: rgba(248, 250, 252, 0.85);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .contact-editorial-layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .credits-scroll-region {
+    max-height: 350px;
+  }
+}

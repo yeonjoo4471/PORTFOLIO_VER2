@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Project Navigation Styling
+   Theme: Episode Transition between Projects
+   Structure: Open Editorial Directional Links (No Box Cards, Clean Hairlines)
+   ========================================================================== */
+
+.project-navigation-section {
+  padding: clamp(4rem, 8vw, 6.5rem) 0;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-deep-navy);
+}
+
+.ep-nav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+/* Open Editorial Transition Link (No Card Box, No Shadow) */
+.ep-nav-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 2px solid var(--color-border-light);
+  text-decoration: none;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.ep-nav-card:hover {
+  border-bottom-color: var(--color-clear-blue);
+}
+
+.ep-nav-direction {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-clear-blue);
+  text-transform: uppercase;
+}
+
+.next-col .ep-nav-card {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.ep-nav-title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  color: var(--color-deep-navy);
+  letter-spacing: -0.01em;
+  transition: color var(--duration-fast) ease;
+}
+
+.ep-nav-card:hover .ep-nav-title {
+  color: var(--color-clear-blue);
+}
+
+.ep-nav-cat {
+  font-size: 0.8125rem;
+  color: var(--color-slate-light);
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .ep-nav-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .next-col .ep-nav-card {
+    text-align: left;
+    align-items: flex-start;
+  }
+}

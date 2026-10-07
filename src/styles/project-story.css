@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Project Story Section Styling
+   Theme: Project Story (WHY) - Objectives, Architecture & Key Artwork
+   ========================================================================== */
+
+.project-story-section {
+  padding: var(--space-section) 0;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.story-layout-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.story-narrative-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.story-header-block .story-kicker {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-clear-blue);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.story-main-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--color-deep-navy);
+}
+
+.story-summary-lead {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-deep-navy);
+  font-weight: 500;
+}
+
+.story-why-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--color-clear-blue);
+}
+
+.story-sub-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.story-block-tag {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-clear-blue);
+}
+
+.story-block-desc {
+  font-size: 0.875rem;
+  color: var(--color-body-slate);
+  line-height: 1.65;
+}
+
+.story-keywords-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.story-kw-badge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  background: var(--color-mist-blue);
+  color: var(--color-clear-blue);
+  border-radius: 2px;
+}
+
+/* Metadata Specification Block */
+.project-data-card {
+  background: var(--color-cloud-white);
+  border: 1px solid var(--color-border-light);
+  padding: 1.25rem 1.5rem;
+}
+
+.data-card-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-deep-navy);
+  display: block;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.data-metrics-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: baseline;
+  font-size: 0.8125rem;
+}
+
+.metric-row dt {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-slate-light);
+  font-size: 0.6875rem;
+}
+
+.metric-row dd {
+  font-weight: 500;
+  color: var(--color-deep-navy);
+}
+
+/* Actions Bar */
+.story-actions-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.btn-view-detail,
+.btn-live-link,
+.btn-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  border-radius: 2px;
+  transition: all var(--duration-fast) ease;
+}
+
+.btn-view-detail {
+  background: var(--color-deep-navy);
+  color: #fff;
+}
+
+.btn-view-detail:hover {
+  background: var(--color-clear-blue);
+}
+
+.btn-live-link {
+  background: var(--color-mist-blue);
+  color: var(--color-clear-blue);
+  border: 1px solid rgba(103, 183, 232, 0.4);
+}
+
+.btn-live-link:hover {
+  background: var(--color-clear-blue);
+  color: #fff;
+}
+
+.btn-github-link {
+  background: rgba(23, 42, 58, 0.04);
+  color: var(--color-deep-navy);
+  border: 1px solid var(--color-border-light);
+}
+
+.btn-github-link:hover {
+  background: var(--color-deep-navy);
+  color: #fff;
+}
+
+/* Visual Column */
+.story-figure-frame {
+  position: sticky;
+  top: 90px;
+  background: var(--color-cloud-white);
+  border: 1px solid var(--color-border-light);
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: var(--shadow-editorial);
+}
+
+.story-figure-img {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .story-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  .story-figure-frame {
+    position: static;
+  }
+}

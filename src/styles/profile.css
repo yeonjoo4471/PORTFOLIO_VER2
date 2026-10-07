@@ -1,0 +1,377 @@
+/* ==========================================================================
+   Profile Section Styling
+   Theme: Setting Book File 01 (Editorial Profile Spread)
+   Structure: 3-Column Editorial Layout (Straight Quotes, Airy Spacing)
+   ========================================================================== */
+
+.profile-section {
+  padding: var(--space-section) 0;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.profile-editorial-spread {
+  display: grid;
+  grid-template-columns: 1.15fr 1.25fr 1.05fr;
+  gap: clamp(2.75rem, 5vw, 5rem);
+  align-items: start;
+}
+
+/* ==========================================================================
+   Left Column: Character Data & Statement
+   ========================================================================== */
+
+.profile-col-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.profile-spec-no {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-clear-blue);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.profile-title {
+  font-size: clamp(2.4rem, 4vw, 3.25rem);
+  font-weight: 400;
+  color: var(--color-deep-navy);
+  line-height: 1.05;
+}
+
+/* Definition List */
+.profile-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--color-deep-navy);
+  border-bottom: 1px solid var(--color-border-medium);
+}
+
+.profile-meta-item dt {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-slate-light);
+  margin-bottom: 0.25rem;
+}
+
+.profile-meta-item dd {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-deep-navy);
+  line-height: 1.5;
+}
+
+/* Statement: Straight Typographic Quote (No Italic Slant) */
+.profile-statement-block {
+  padding-left: 1.65rem;
+  border-left: 2px solid var(--color-clear-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.statement-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-clear-blue);
+}
+
+.statement-quote {
+  font-family: var(--font-body);
+  font-size: 1.1875rem;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--color-deep-navy);
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+}
+
+.statement-subtext {
+  font-size: 0.875rem;
+  color: var(--color-body-slate);
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   Center Column: Figure Cutout & Core Strengths
+   ========================================================================== */
+
+.profile-col-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+/* Figure Display */
+.figure-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.figure-backdrop {
+  position: relative;
+  background: linear-gradient(180deg, #EDF6FC 0%, #F5F9FC 100%);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 470px;
+}
+
+.figure-portrait-img {
+  max-height: 460px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(23, 42, 58, 0.08));
+}
+
+.figure-watermark {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(23, 42, 58, 0.25);
+  letter-spacing: 0.1em;
+}
+
+/* Strengths: Open Typographic List */
+.profile-strengths-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border-medium);
+}
+
+.strengths-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.strengths-spec {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-clear-blue);
+}
+
+.strengths-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-deep-navy);
+}
+
+.strengths-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.strengths-list li {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: baseline;
+  gap: 0.65rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.strengths-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.strength-bullet {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-clear-blue);
+  letter-spacing: 0.05em;
+}
+
+.strength-name {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--color-deep-navy);
+  margin-bottom: 0.2rem;
+}
+
+.strength-desc {
+  font-size: 0.875rem;
+  color: var(--color-body-slate);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Right Column: Interests & Philosophy
+   ========================================================================== */
+
+.profile-col-interests {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.interest-header .spec-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-clear-blue);
+  display: block;
+}
+
+.interest-header .interest-title {
+  font-size: 1.25rem;
+  color: var(--color-deep-navy);
+  margin-top: 0.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--color-deep-navy);
+}
+
+/* Editorial Entries */
+.interests-editorial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.interest-entry {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  padding-bottom: 1.45rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.interest-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.interest-thumb-wrap {
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  background-color: var(--color-cloud-white);
+}
+
+.interest-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-fast) ease;
+}
+
+.interest-entry:hover .interest-thumb-wrap img {
+  transform: scale(1.05);
+}
+
+.interest-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.interest-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.interest-tag {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-clear-blue);
+}
+
+.interest-idx {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-slate-light);
+  letter-spacing: 0.05em;
+}
+
+.interest-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-deep-navy);
+}
+
+.interest-desc {
+  font-size: 0.84375rem;
+  color: var(--color-body-slate);
+  line-height: 1.5;
+}
+
+/* Philosophy: Straight Typographic Pull-Quote (No Italic Slant) */
+.philosophy-block {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-medium);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.philosophy-tag {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-slate-light);
+}
+
+.philosophy-quote {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--color-deep-navy);
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1140px) {
+  .profile-editorial-spread {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .figure-backdrop {
+    min-height: 350px;
+  }
+
+  .figure-portrait-img {
+    max-height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .interest-entry {
+    grid-template-columns: 75px 1fr;
+    gap: 0.85rem;
+  }
+
+  .interest-thumb-wrap {
+    width: 75px;
+    height: 75px;
+  }
+}

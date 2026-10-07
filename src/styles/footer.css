@@ -1,0 +1,144 @@
+/* ==========================================================================
+   Global Footer Styling
+   Theme: Contrast Ending & Editorial Credits
+   ========================================================================== */
+
+.global-footer {
+  width: 100%;
+}
+
+.ending-banner {
+  background: var(--color-deep-navy);
+  color: var(--color-cloud-white);
+  padding: clamp(6.5rem, 11vw, 9.5rem) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ending-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-sky-blue), transparent);
+}
+
+.ending-content {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.ending-label {
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  color: var(--color-sky-blue);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.ending-title {
+  font-size: clamp(2.75rem, 6.5vw, 5rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-white);
+  line-height: 1.1;
+}
+
+.ending-desc {
+  font-size: 1rem;
+  color: rgba(248, 250, 252, 0.75);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Credits Bar */
+.credits-bar {
+  background: var(--color-black);
+  color: var(--color-slate-light);
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.75rem;
+}
+
+.credits-inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.credits-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.credits-right {
+  align-items: flex-end;
+}
+
+.credit-role {
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+}
+
+.credit-desc,
+.credit-names {
+  letter-spacing: 0.04em;
+  color: rgba(248, 250, 252, 0.85);
+}
+
+.credit-year {
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.05em;
+}
+
+.back-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-sky-blue);
+  transition: color var(--duration-fast) ease;
+  margin-top: 0.35rem;
+}
+
+.back-top-btn:hover {
+  color: var(--color-white);
+}
+
+.arrow-top {
+  font-size: 0.875rem;
+  transition: transform var(--duration-fast) ease;
+}
+
+.back-top-btn:hover .arrow-top {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 860px) {
+  .credits-inner {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .credits-col {
+    align-items: center;
+  }
+
+  .credits-right {
+    align-items: center;
+  }
+}

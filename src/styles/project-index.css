@@ -1,0 +1,420 @@
+/* ==========================================================================
+   Project Index Styling
+   Concept: Setting Book Table of Contents (목차) × Anime Episode List
+   Structure: Unified Single-Line Layout with Consistent Row Heights & Dividers
+   ========================================================================== */
+
+.projects-index-section {
+  padding: var(--space-section) 0;
+  background-color: var(--color-cloud-white);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+/* Intro Block: Airy & Spacious */
+.index-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: flex-end;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.index-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-clear-blue);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.index-title {
+  font-size: clamp(2.5rem, 4.8vw, 3.75rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--color-deep-navy);
+}
+
+.index-intro-right p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-body-slate);
+}
+
+/* Main Two-Column Layout */
+.index-main-layout {
+  display: grid;
+  grid-template-columns: 1.65fr 0.85fr;
+  gap: clamp(2.5rem, 4.5vw, 4.5rem);
+  align-items: start;
+}
+
+/* ==========================================================================
+   Left: Open Table of Contents (Unified Single-Line Rows)
+   ========================================================================== */
+
+.episode-toc {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid var(--color-deep-navy);
+}
+
+/* Table Header */
+.toc-header-row {
+  display: grid;
+  grid-template-columns: 72px 1fr 195px 55px 30px;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.15rem 1.35rem;
+  border-bottom: 1px solid var(--color-border-medium);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-slate-light);
+}
+
+.toc-th-arrow {
+  text-align: right;
+}
+
+/* Episode Row: 100% Unified Height & Single-Line Structure Across All 8 Rows */
+.episode-toc-row {
+  display: grid;
+  grid-template-columns: 72px 1fr 195px 55px 30px;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.7rem 1.35rem;
+  border-bottom: 1px solid var(--color-border-light);
+  background: transparent;
+  text-decoration: none;
+  transition: all var(--duration-fast) ease;
+  position: relative;
+  min-height: 82px;
+}
+
+/* Hover & Active States */
+.episode-toc-row:hover,
+.episode-toc-row.is-active {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom-color: var(--color-clear-blue);
+}
+
+.episode-toc-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--color-clear-blue);
+  opacity: 0;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.episode-toc-row:hover::before,
+.episode-toc-row.is-active::before {
+  opacity: 1;
+}
+
+/* Column: Episode Number */
+.toc-col-ep {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.toc-ep-prefix {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-slate-light);
+  transition: color var(--duration-fast) ease;
+}
+
+.toc-ep-num {
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-deep-navy);
+  transition: color var(--duration-fast) ease;
+}
+
+.episode-toc-row:hover .toc-ep-num,
+.episode-toc-row.is-active .toc-ep-num {
+  color: var(--color-clear-blue);
+}
+
+/* Column: Unified Single-Line Title & Subtitle */
+.toc-col-title {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.toc-title-single-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toc-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-deep-navy);
+  letter-spacing: -0.01em;
+  transition: color var(--duration-fast) ease;
+  flex-shrink: 0;
+}
+
+.episode-toc-row:hover .toc-title,
+.episode-toc-row.is-active .toc-title {
+  color: var(--color-clear-blue);
+}
+
+.toc-title-sep {
+  color: var(--color-slate-light);
+  font-weight: 400;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  padding: 0 0.1rem;
+}
+
+.toc-subtitle {
+  font-size: 0.84375rem;
+  color: var(--color-body-slate);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Column: Category */
+.toc-col-cat {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.toc-category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-slate-light);
+  text-transform: uppercase;
+}
+
+/* Column: Year */
+.toc-col-year {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-body-slate);
+}
+
+/* Column: Arrow */
+.toc-col-arrow {
+  text-align: right;
+}
+
+.toc-arrow {
+  font-size: 1.15rem;
+  color: var(--color-slate-light);
+  display: inline-block;
+  transition: transform var(--duration-fast) var(--ease-cut), color var(--duration-fast) ease;
+}
+
+.episode-toc-row:hover .toc-arrow,
+.episode-toc-row.is-active .toc-arrow {
+  transform: translateX(4px);
+  color: var(--color-clear-blue);
+}
+
+/* ==========================================================================
+   Right: Editorial Figure Preview Sheet
+   ========================================================================== */
+
+.episode-preview-sheet {
+  position: relative;
+}
+
+.preview-sheet-sticky {
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Header line */
+.preview-sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--color-border-medium);
+}
+
+.preview-figure-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-clear-blue);
+}
+
+.preview-sheet-spec {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--color-slate-light);
+}
+
+/* Figure Media */
+.preview-figure-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-light);
+}
+
+.preview-figure-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-normal) var(--ease-smooth);
+}
+
+.preview-sheet-sticky:hover .preview-figure-img {
+  transform: scale(1.02);
+}
+
+/* Figure Caption */
+.preview-figure-caption {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  font-size: 0.84375rem;
+  color: var(--color-body-slate);
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.preview-figure-caption .figure-badge {
+  font-size: 0.6875rem;
+  padding: 0.15rem 0.45rem;
+  background: var(--color-mist-blue);
+  color: var(--color-clear-blue);
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+/* Spec Key-Value List */
+.preview-sheet-spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.spec-row {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.spec-dt {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-slate-light);
+}
+
+.spec-dd {
+  font-weight: 500;
+  color: var(--color-deep-navy);
+  line-height: 1.5;
+}
+
+/* Action: Refined Editorial Link */
+.preview-sheet-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.25rem;
+  background: var(--color-deep-navy);
+  color: var(--color-white);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: all var(--duration-fast) ease;
+}
+
+.preview-sheet-action:hover {
+  background: var(--color-clear-blue);
+}
+
+.action-arrow {
+  transition: transform var(--duration-fast) ease;
+}
+
+.preview-sheet-action:hover .action-arrow {
+  transform: translateX(6px);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1140px) {
+  .index-main-layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .episode-preview-sheet {
+    order: -1;
+  }
+
+  .preview-sheet-sticky {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .index-intro {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .toc-header-row {
+    display: none;
+  }
+
+  .episode-toc-row {
+    grid-template-columns: 60px 1fr 24px;
+    gap: 0.75rem;
+    padding: 1.35rem 0.35rem;
+    min-height: auto;
+  }
+
+  .toc-col-cat,
+  .toc-col-year {
+    display: none;
+  }
+
+  .toc-title-single-line {
+    flex-direction: column;
+    gap: 0.2rem;
+    white-space: normal;
+  }
+
+  .toc-title-sep {
+    display: none;
+  }
+}

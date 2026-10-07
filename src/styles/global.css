@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Global Reset & Editorial Foundation
+   ========================================================================== */
+
+@import './fonts.css';
+@import './variables.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 17px;
+  background-color: var(--color-cloud-white);
+  color: var(--color-body-slate);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.65;
+  background-color: var(--color-cloud-white);
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   Typography Hierarchy
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-deep-navy);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.font-title {
+  font-family: var(--font-title);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+/* ==========================================================================
+   Editorial Layout & Utility Classes
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width-editorial);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--max-width-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.editorial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--color-border-medium);
+}
+
+.editorial-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-clear-blue);
+}
+
+.editorial-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--color-slate-light);
+  text-transform: uppercase;
+}
+
+.editorial-caption {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-slate-light);
+  margin-top: var(--space-xs);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+}
+
+.figure-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-clear-blue);
+  background: var(--color-mist-blue);
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   Core Motion Language (4 Defined Motions)
+   ========================================================================== */
+
+/* 1. TEXT CUT */
+.motion-text-cut {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.motion-text-cut > * {
+  display: inline-block;
+  animation: textCutIn 0.5s var(--ease-cut) both;
+}
+
+@keyframes textCutIn {
+  from {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 2. MASK REVEAL */
+.motion-mask-reveal {
+  position: relative;
+  overflow: hidden;
+}
+.motion-mask-reveal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-deep-navy);
+  transform: translateY(0);
+  transition: transform 0.8s var(--ease-cut);
+  z-index: 2;
+  pointer-events: none;
+}
+.motion-mask-reveal.revealed::after {
+  transform: translateY(-100%);
+}
+
+/* 3. SLIDE */
+.motion-slide {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
+}
+.motion-slide.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 4. SCROLL REVEAL */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+  will-change: opacity, transform;
+}
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-clear-blue);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
