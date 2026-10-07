@@ -1,0 +1,52 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  role="img"
+  aria-label="YJ portfolio"
+>
+  <!-- 배경 -->
+  <rect
+    width="64"
+    height="64"
+    rx="12"
+    fill="#f8fafc"
+  />
+
+  <!-- YJ 모노그램 -->
+  <text
+    x="7"
+    y="47"
+    fill="#172a3a"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="42"
+    font-weight="400"
+    letter-spacing="-5"
+  >
+    YJ
+  </text>
+
+  <!-- 별빛 -->
+  <path
+    d="
+      M51 7
+      L53 12
+      L59 14
+      L53 16
+      L51 22
+      L49 16
+      L43 14
+      L49 12
+      Z
+    "
+    fill="#67b7e8"
+  />
+
+  <!-- 바람 선 -->
+  <path
+    d="M17 55 Q25 52 34 47"
+    fill="none"
+    stroke="#67b7e8"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+</svg>
